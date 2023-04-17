@@ -1,0 +1,1039 @@
+---
+title: "Diciónario Wanyam"
+author: "Uki Lucero e Joshua Birchall"
+---
+
+<div id="barrabusca">
+  <input id="searchbar" onkeyup="busca_entrada()" type="text"
+  name="search" placeholder="Buscar...">
+</div>
+
+<style>
+#barrabusca {
+z-index: 999;
+width: 50%;
+position: absolute;
+top: 0px;
+right: 0px; 
+}
+#searchbar{
+padding:03px;
+border-radius: 10px;
+width: 50%;  
+z-index: 999;   
+margin-left: 30px;
+margin-top: 30px;
+}
+hr {
+overflow: visible; padding: 0;
+border: none;
+border-top: medium double #333;
+color: #333;
+text-align: center;
+}
+img {
+border: 1px solid black;
+}
+#header {
+margin-top: 80px;
+}
+@media only screen and (max-width: 1000px){
+
+img {
+width: 280px; height: 200px; 
+}
+#TOC {
+display: none;
+}
+#searchbar{
+padding:03px;
+border-radius: 10px;
+width: 50%;  
+z-index: 999;   
+margin-left: 30px;
+margin-top: 2px;
+float:right;
+}
+#barrabusca {
+float:right;
+justify-content: right;
+}
+#header {
+margin-top: 25px;
+}
+.toc-ignore {
+  padding: 5px;
+}
+}
+</style>
+<script>
+function busca_entrada() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('section level1');
+    let x2 = document.getElementsByClassName('section level2');
+    
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerText.toLowerCase().includes(input)) {
+            x[i].style.display="none"; 
+
+        }
+        else {
+            x[i].style.display="contents";
+            for (a = 0; a < x2.length; a++){
+                if (!x2[a].innerText.toLowerCase().includes(input)){
+                    x2[a].style.display="none"; 
+                }
+                else {
+                    x2[a].style.display="contents";
+
+                }
+            }
+        }
+    }
+}
+  </script>
+
+
+
+
+<hr>
+## ahop - jacaré
+
+** 
+
+
+
+![](foto/wany1246-ahop-jacare-caiman.jpeg)
+
+
+Exemplo de uso:
+
+*im kaw ara ahop (Ribeiro 2000: 53).*
+
+você/tu come um jacaré.
+
+
+
+
+<hr>
+## apapa - sucuri
+
+** 
+
+
+
+![](foto/wany1246-apapa-sucuri-anaconda.jpg)
+
+
+
+
+
+<hr>
+## apaxam - pica-pau
+
+** 
+
+
+
+![](foto/wany1246-apaxam-pica_pau-woodpecker.jpg)
+
+
+
+
+
+<hr>
+## arayi\' - arara vermelha maior
+
+** 
+
+
+
+![](foto/wany1246-araji-arara_vermelha-scarlet_macaw.jpg)
+
+
+
+
+
+<hr>
+## awan - capivara
+
+** 
+
+
+
+![](foto/wany1246-awan-capivara-capybara.jpeg)
+
+
+
+
+
+<hr>
+## awi - formiga sauva
+
+** 
+
+
+
+
+<hr>
+## awiram - guariba
+
+** 
+
+
+
+![](foto/wany1246-awiram-guariba-howlermonkey.jpeg)
+
+
+
+
+
+<hr>
+## erim - jacamim
+
+** 
+
+
+
+![](foto/wany1246-erim-jacamim-greywinged_trumpeter.jpg)
+
+
+
+
+
+<hr>
+## eye\' - calango
+
+** 
+
+
+
+![](foto/wany1246-eje-calango-lizard.jpg)
+
+
+
+
+
+<hr>
+## imari - veado
+
+** 
+
+
+
+![](foto/wany1246-imari-veado-brocket_deer.jpeg)
+
+
+
+
+
+<hr>
+## ime - nambú
+
+** 
+
+
+
+![](foto/wany1246-ime-nambu-tinamou.jpeg)
+
+
+
+
+
+<hr>
+## ime unaran - nambu galinha
+
+** 
+
+
+
+
+<hr>
+## imi - anta/tapir
+
+** 
+
+
+
+
+<hr>
+## inaw - morcego
+
+** 
+
+
+
+![](foto/wany1246-inaw-morcego-bat.jpg)
+
+
+
+
+
+<hr>
+## ipan - falcão
+
+** 
+
+
+
+![](foto/wany1246-ipan-falcao-hawk.jpg)
+
+
+
+
+
+<hr>
+## ipik - tamanduá mambira
+
+** 
+
+
+
+
+<hr>
+## ipikipan - tatu canastra
+
+** 
+
+
+
+
+<hr>
+## irawu - formiga
+
+** 
+
+
+
+![](foto/wany1246-irawu-formiga-ant.jpeg)
+
+
+
+
+
+<hr>
+## iwi - tucano
+
+** 
+
+
+
+![](foto/wany1246-iwi-tucano-toucan.jpg)
+
+
+
+
+
+<hr>
+## iwiri - marimbondo (esp.)
+
+** 
+
+
+
+![](foto/wany1246-iwiri-marimbondo-wasp.jpg)
+
+
+
+
+
+<hr>
+## ixikin - traíra
+
+** 
+
+
+
+
+<hr>
+## ixumin - bicho preguiça
+
+** 
+
+
+
+![](foto/wany1246-ixumin-preguica-sloth.jpeg)
+
+
+
+
+
+<hr>
+## kahota - quati; cão moleiro
+
+** 
+
+
+
+![](foto/wany1246-kahota-quati-coati.jpeg)
+
+
+
+
+
+<hr>
+## karakaw - cobra
+
+** 
+
+
+
+![](foto/wany1246-karakaw-cobra-snake.jpeg)
+
+
+Exemplo de uso:
+
+*mom irakan na karakaw (Ribeiro 2000: 11).*
+
+as cobras.
+
+
+
+
+<hr>
+## karapakak - peixe arraia
+
+** 
+
+
+
+![](foto/wany1246-karapakak-peixe_arraia-stingray.jpg)
+
+
+
+
+
+<hr>
+## karatik - cobra bico de jaca
+
+** 
+
+
+
+![](foto/wany1246-karatik-cobra_bicodejaca-jackbeak_snake.jpg)
+
+
+
+
+
+<hr>
+## kinam - onça pintada
+
+** 
+
+
+
+![](foto/wany1246-kinam-onca_pintada-jaguar.jpeg)
+
+
+Exemplo de uso:
+
+*kame xem mene kin kinam (Ribeiro 2000: 43).*
+
+onça preta.
+
+
+
+
+<hr>
+## kinam kohihina - gato maracaja
+
+** 
+
+
+
+![](foto/wany1246-kinam_kohihina-gato_maracaja-margay.jpg)
+
+
+
+
+
+<hr>
+## kinipitik - mucura
+
+** 
+
+
+
+![](foto/wany1246-kinipitik-mucura-possum.jpeg)
+
+
+
+
+
+<hr>
+## koki - piranha
+
+** 
+
+
+
+![](foto/wany1246-koki-piranha-piranha.jpg)
+
+
+
+
+
+<hr>
+## meki - caranguejo
+
+** 
+
+
+
+![](foto/wany1246-meki-caranguejo-crab.jpg)
+
+
+
+
+
+<hr>
+## mikop - agouti; tipo de paca vermelha
+
+** 
+
+
+
+![](foto/wany1246-mikop-paca_vermelha-paca.jpg)
+
+
+Exemplo de uso:
+
+*maxak ata mikop (Ribeiro 2000: 31).*
+
+eu comerei uma paca.
+
+
+
+
+<hr>
+## miriritike\' - vagalume
+
+** 
+
+
+
+![](foto/wany1246-miriritike-vagalume-firefly.jpeg)
+
+
+
+
+
+<hr>
+## miyak - queixada
+
+** 
+
+
+
+
+<hr>
+## moho - urubu
+
+** 
+
+
+
+![](foto/wany1246-moho-urubu-vulture.jpeg)
+
+
+
+
+
+<hr>
+## mohoyap - pacú (esp.)
+
+** 
+
+
+
+
+<hr>
+## murumakan - arara azul
+
+** 
+
+
+
+![](foto/wany1246-murumakan-arara_azul-blue_macaw.jpg)
+
+
+
+
+
+<hr>
+## namatok - rato; camundongo
+
+** 
+
+
+
+![](foto/wany1246-namatok-rato-rat.jpeg)
+
+
+
+
+
+<hr>
+## niwikin - macaco da noite
+
+** 
+
+
+
+![](foto/wany1246-niwikin-macaco_danoite-night_monkey.jpg)
+
+
+
+
+
+<hr>
+## nowi\' - enguia elétrica; puraqué
+
+** 
+
+
+
+![](foto/wany1246-nowi-puraque-electric_eel.jpg)
+
+
+
+
+
+<hr>
+## otiw - macaco de cheiro
+
+** 
+
+
+
+![](foto/wany1246-otiw-macaco_decheiro-saimiri.png)
+
+
+
+
+
+<hr>
+## papaki\' - cupim
+
+** 
+
+
+
+![](foto/wany1246-papaki-cupim-termite.jpg)
+
+
+
+
+
+<hr>
+## paxiren - beija flor
+
+** 
+
+
+
+![](foto/wany1246-paxiren-beija_flor-hummingbird.jpg)
+
+
+
+
+
+<hr>
+## pihun - jacu
+
+** 
+
+
+
+![](foto/wany1246-pihun-jacu-penelope.jpg)
+
+
+Exemplo de uso:
+
+*hiri unon pihun (Ribeiro 2000: 12).*
+
+atirar no jacu.
+
+
+
+
+<hr>
+## pikot - tatu grande; que faz vereda
+
+** 
+
+
+
+![](foto/wany1246-pikot-tatu_grande-giantarmadillo.jpeg)
+
+
+
+
+
+<hr>
+## piti - mosca
+
+** 
+
+
+
+![](foto/wany1246-piti-mosca-fly.jpg)
+
+
+
+
+
+<hr>
+## piwan - aranha caranguejeira
+
+** 
+
+
+
+![](foto/wany1246-piwan-caranguejeira-tarantula.jpeg)
+
+
+
+
+
+<hr>
+## piyaman - tamanduá
+
+** 
+
+
+
+
+<hr>
+## tamuruwa\' - carrapato
+
+** 
+
+
+
+![](foto/wany1246-tamuwura-carrapato-tick.jpg)
+
+
+
+
+
+<hr>
+## tapan - macaco suim
+
+** 
+
+
+
+![](foto/wany1246-tapan-macaco_suim-tamarin.jpg)
+
+
+
+
+
+<hr>
+## tapapat - aranha (geral)
+
+** 
+
+
+
+![](foto/wany1246-tapapat-aranha-spider.jpeg)
+
+
+
+
+
+<hr>
+## tapitak - formiga tucandeira
+
+** 
+
+
+
+
+<hr>
+## tapiw - cutia
+
+** 
+
+
+
+![](foto/wany1246-tapiw-cutia-agouti.jpg)
+
+
+
+
+
+<hr>
+## tawi - abelha (geral)
+
+** 
+
+
+
+![](foto/wany1246-tawi-abelha-bee.png)
+
+
+Exemplo de uso:
+
+*tawi nakon mara wiyam (Ribeiro 2000: 7).*
+
+abelha(esp.).
+
+
+
+
+<hr>
+## tenerere\' - borboleta
+
+** 
+
+
+
+![](foto/wany1246-tenerere-borboleta-butterfly.jpg)
+
+
+
+
+
+<hr>
+## towa - tartaruga; tracajá
+
+** 
+
+
+
+![](foto/wany1246-towa-tartaruga-turtle.jpg)
+
+
+
+
+
+<hr>
+## towaraw - papagaio
+
+** 
+
+
+
+![](foto/wany1246-towaraw-papagaio-parrot.jpeg)
+
+
+
+
+
+<hr>
+## tramin - arara vermelha
+
+** 
+
+
+
+
+<hr>
+## trawam - surubim
+
+** 
+
+
+
+![](foto/wany1246-trawam-surubim-catfish.jpeg)
+
+
+
+
+
+<hr>
+## tukawan - caititu
+
+** 
+
+
+
+![](foto/wany1246-tukawan-caititu-peccary.jpg)
+
+
+Exemplo de uso:
+
+*hwoyt wanan uway ikeren tukawan (Ribeiro 2000: 23).*
+
+comida de carne e mandioca.
+
+
+
+
+<hr>
+## tunururu\' - barata
+
+** 
+
+
+
+![](foto/wany1246-tunururu-barata-cockroach.png)
+
+
+
+
+
+<hr>
+## ukari - tatu
+
+** 
+
+
+
+![](foto/wany1246-ukari-tatu-armadillo.jpeg)
+
+
+
+
+
+<hr>
+## ukin - escorpião
+
+** 
+
+
+
+![](foto/wany1246-ukin-escorpiao-scorpion.jpg)
+
+
+
+
+
+<hr>
+## ukuku\' - cigarra
+
+** 
+
+
+
+![](foto/wany1246-ukuku-cigarra-cicada.jpg)
+
+
+
+
+
+<hr>
+## utin - mutum
+
+** 
+
+
+
+![](foto/wany1246-utin-mutum-curassow.jpeg)
+
+
+
+
+
+<hr>
+## waram - macaco preto
+
+** 
+
+
+
+![](foto/wany1246-waram-macaco_preto-spidermonkey.jpg)
+
+
+
+
+
+<hr>
+## watik - macaco gogo de sola
+
+** 
+
+
+
+![](foto/wany1246-watik-macaco_gogodesola-olingo.jpg)
+
+
+
+
+
+<hr>
+## wawan - peixe mandi (branco)
+
+** 
+
+
+
+![](foto/wany1246-wawan-peixe_mandi-catfish.jpg)
+
+
+
+
+
+<hr>
+## wiraw - louva a deus; bicho pau
+
+** 
+
+
+
+![](foto/wany1246-wiraw-bicho_pau-praying_mantis.jpg)
+
+
+
+
+
+<hr>
+## xerapa\' - martim pescador
+
+** 
+
+
+
+![](foto/wany1246-serapa-martim_pescador-kingfisher.jpg)
+
+
+
+
+
+<hr>
+## xiwen - veado capoeira
+
+** 
+
+Exemplo de uso:
+
+*kirik unun xiwen (Ribeiro 2000: 12).*
+
+assar (veado).
+
+
+
+
+<hr>
+## yimun - formiga sacassaia
+
+** 
+
+
+
+![](foto/wany1246-jimun-formiga_sacassaia-armyant.jpeg)
+
+
+
+
+
+<hr>
+## yowin - macaco prego
+
+** 
+
+
+
+![](foto/wany1246-jowin-macaco_prego-capuchin.jpg)
+
+
+Exemplo de uso:
+
+*kerik iyana yowin (Ribeiro 2000: 16).*
+
+macaco bonito.

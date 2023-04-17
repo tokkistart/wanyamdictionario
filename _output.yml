@@ -1,0 +1,5 @@
+html_document:
+    theme: simplex
+    highlight: tango
+    toc: true
+    toc_float: true

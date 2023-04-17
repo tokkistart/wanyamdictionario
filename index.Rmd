@@ -1,0 +1,135 @@
+---
+title: "Introdução"
+output: html_document
+---
+
+Este dicionário é o resultado de um projeto de pesquisa financiado pelo Arts and Sciences Support for Undergraduate Research Experience (ASSURE) na Universidade de Novo Mexico. Utilizamos um banco de dados lexicais das línguas Txapakura, onde já foram compiladas entradas de vocabulário e frases curtas a partir da documentação de todas as línguas da família Txapakura. As informaçōes sobre o Wanyam foram retiradas de seis fontes principais:  Haseman (1912), Rivet e Crequi-Montfort (1913), Nordenskiold (1913), Snethlage (2016[1935]), Hanke (1975), e Ribeiro (1998). Utilizando essas informações, coletamos todas as ocorrências de itens de vocabulário básico para comparar as diferentes transcrições entre si e com itens semelhantes em outras línguas Txapakura. A partir dessa comparação propomos a transcrição mais provável da palavra.
+
+Aqui apresentamos os sons da língua Wanyam e propomos como eles devem ser representados ortograficamente no dicionário. Propomos um alfabeto que nāo é exatamente igual ao do português ou do espanhol, mas especificamente para o Wanyam, adotando convenções utilizadas nos alfabetos das demais línguas Txapakura.
+
+## Consoantes
+
+### **/t/** 
+Pode ocorrer em qualquer posição em uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*tawi*__ | ‘abelha’ | __*karatik*__ |‘cobra bico de jaca’ | __*ikit*__ | ‘faca’ |
+__*tapan*__ | ‘macaco suim’ | __*piti*__ | ‘mosca’ | __*tapapat*__ | ‘aranha’ |
+
+### **/k/** 
+Pode ocorrer em qualquer posição em uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*kinam*__ | ‘onça pintado’ | __*meki*__ |‘caranguejo’ | __*watik*__ | ‘macaco gogo de sola’ |
+__*kaxin*__ | ‘abacaxi’ | __*ukin*__ | ‘escorpiāo’ | __*mapak*__ | ‘milho’ |
+
+### **/p/** 
+Pode ocorrer em qualquer posição em uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*paxiren*__ | ‘beija flor’ | __*apapa*__ |‘sucuri’ | __*ahop*__ | ‘jacaré’ |
+__*papaki'*__ | ‘cupim’ | __*akopa*__ | ‘macaxeira’ | __*mikop*__ | ‘agouti’ |
+
+### **/'/** 
+Pode ocorrer apenas no meio ou no final de uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*ukuku'*__ | ‘cigarra’ | __*eye'*__ |‘calango’ | __*po'a'*__ | ‘mamāo’ |
+
+### **/x/** 
+Pode ocorrer apenas no início ou no meio de uma palavra. Soa como o *ch* em *chato* ou *t* antes do *i* em *ratinho*.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*xiwen*__ | ‘veado capoeira’ | __*apaxam*__ |‘pica-pau’ | __*kaxin*__ | ‘abacaxi’ |
+
+### **/h/** 
+Pode ocorrer apenas no início ou no meio de uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*pihun*__ | ‘jacu’ | __*ahop*__ |‘jacaré’ | __*kinam ko hihina*__ | ‘gato maracaja’ |
+
+### **/m/** 
+Pode ocorrer em qualquer posição em uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*moho*__ | ‘urubu’ | __*imi*__ |‘anta/tapir’ | __*iram*__ | ‘açaí’ |
+__*meki'*__ | ‘caranguejo’ | __*namatok*__ | ‘rato’ | __*wom*__ | ‘algodão’ |
+
+### **/n/** 
+Pode ocorrer em qualquer posição em uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*nowi'*__ | ‘puraqué’ | __*winu'*__ |‘caju’ | __*utin*__ | ‘mutum’ |
+__*namatok'*__ | ‘rato’ | __*kanowan*__ | ‘cacau’ | __*tapan*__ | ‘macaco suim’ |
+
+### **/r/** 
+Pode ocorrer apenas no meio de uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*paru*__ | ‘arco’ | __*ukari*__ |‘tatu’ | __*tenerere'*__ | ‘borboleta’ |
+
+### **/w/** 
+Pode ocorrer em qualquer posição em uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*wiraw*__ | ‘bicho pau’ | __*tawi*__ |‘abelha’ | __*inaw*__ | ‘morcego’ |
+__*wom'*__ | ‘algodão’ | __*iwiri*__ | ‘marimbondo’ | __*uwaw*__ | ‘tucumã’ |
+
+### **/y/** 
+Pode ocorrer apenas no início ou no meio de uma palavra. Soa como o *i* antes do *o* em *iogurte*.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*yowin*__ | ‘macaco prego’ | __*yimun*__ |‘formiga sacassaia’ | __*piyaman*__ | ‘tamanduá’ |
+
+## Sequências de Consoantes
+
+### **/tr/** 
+Pode ocorrer apenas no início ou no meio de uma palavra.
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*trawam*__ | ‘surubim’ | __*atrim*__ |‘casa’ | __*kitrama'*__ | ‘homem’ |
+
+## Vogais
+As cinco vogais podem ocorrer em qualquer posição na palavra.
+
+### **/a/** 
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*awi*__ | ‘formiga sauva’ | __*ukari*__ |‘tatu’ | __*kahota*__ | ‘quati’ |
+
+### **/i/** 
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*ime*__ | ‘nambú’ | __*awine*__ |‘banana’ | __*koki*__ | ‘piranha’ |
+
+### **/e/** 
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*erim*__ | ‘jacamim’ | __*meki*__ |‘caranguejo’ | __*tike*__ | ‘castanha do pará’ |
+
+### **/o/** 
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*otiw*__ | ‘macaco de cheiro’ | __*ahorop*__ |‘genipapo do mato’ | __*moho*__ | ‘urubu’ |
+
+### **/u/** 
+
+|      |    |    |     |     |     |
+|  ----- | ----- | ----- | ----- | ----- | ----- |
+__*ukin*__ | ‘escorpião’ | __*pihun*__ |‘jacu’ | __*utu*__ | ‘cabaça’ |

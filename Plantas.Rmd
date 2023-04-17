@@ -1,0 +1,406 @@
+---
+title: "Diciónario Wanyam"
+author: "Uki Lucero e Joshua Birchall"
+---
+
+<div id="barrabusca">
+  <input id="searchbar" onkeyup="busca_entrada()" type="text"
+  name="search" placeholder="Buscar...">
+</div>
+
+<style>
+#barrabusca {
+z-index: 999;
+width: 50%;
+position: absolute;
+top: 0px;
+right: 0px; 
+}
+#searchbar{
+padding:03px;
+border-radius: 10px;
+width: 50%;  
+z-index: 999;   
+margin-left: 30px;
+margin-top: 30px;
+}
+hr {
+overflow: visible; padding: 0;
+border: none;
+border-top: medium double #333;
+color: #333;
+text-align: center;
+}
+img {
+border: 1px solid black;
+}
+#header {
+margin-top: 80px;
+}
+@media only screen and (max-width: 1000px){
+
+img {
+width: 280px; height: 200px; 
+}
+#TOC {
+display: none;
+}
+#searchbar{
+padding:03px;
+border-radius: 10px;
+width: 50%;  
+z-index: 999;   
+margin-left: 30px;
+margin-top: 2px;
+float:right;
+}
+#barrabusca {
+float:right;
+justify-content: right;
+}
+#header {
+margin-top: 25px;
+}
+.toc-ignore {
+  padding: 5px;
+}
+}
+</style>
+<script>
+function busca_entrada() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('section level1');
+    let x2 = document.getElementsByClassName('section level2');
+    
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerText.toLowerCase().includes(input)) {
+            x[i].style.display="none"; 
+
+        }
+        else {
+            x[i].style.display="contents";
+            for (a = 0; a < x2.length; a++){
+                if (!x2[a].innerText.toLowerCase().includes(input)){
+                    x2[a].style.display="none"; 
+                }
+                else {
+                    x2[a].style.display="contents";
+
+                }
+            }
+        }
+    }
+}
+  </script>
+
+
+
+
+<hr>
+## ahorop - genipapo do mato
+
+** 
+
+
+
+![](foto/wany1246-ahorop-genipapo_domato-genipa_bush.jpg)
+
+
+
+
+
+<hr>
+## akopa - macaxeira
+
+** 
+
+
+
+![](foto/wany1246-akopa-macaxeira-cassava.jpeg)
+
+
+
+
+
+<hr>
+## awine - banana (geral)
+
+** 
+
+
+
+![](foto/wany1246-awine-banana-banana.jpeg)
+
+
+
+
+
+<hr>
+## ayiwe\' - tabaco; fumo; cigarro
+
+** 
+
+
+
+![](foto/wany1246-ajiwe-tabaco-tobacco.jpg)
+
+
+Exemplo de uso:
+
+*nuk ata ayiwe (Ribeiro 2000: 35).*
+
+fumar.
+
+
+
+
+<hr>
+## iram - açaí
+
+** 
+
+
+
+![](foto/wany1246-iram-acai-acai.jpg)
+
+
+
+
+
+<hr>
+## kanowan - cacau
+
+** 
+
+
+
+![](foto/wany1246-kanowan-cacau-cocoa.jpg)
+
+
+
+
+
+<hr>
+## kaxin - abacaxi
+
+** 
+
+
+
+![](foto/wany1246-kaxin-abacaxi-pineapple.jpg)
+
+
+
+
+
+<hr>
+## mapak - milho
+
+** 
+
+
+
+![](foto/wany1246-mapak-milho-corn.jpg)
+
+
+Exemplo de uso:
+
+*wixi kaw ata mapak (Ribeiro 2000: 12).*
+
+assar milho.
+
+
+
+
+<hr>
+## maran ka - jerimum
+
+** 
+
+
+
+![](foto/wany1246-maranka-jerimum-pumpkin.jpg)
+
+
+
+
+
+<hr>
+## matan - cará inhame
+
+** 
+
+
+
+
+<hr>
+## mawin - urucum
+
+** 
+
+
+
+![](foto/wany1246-mawin-urucum-achiote.jpg)
+
+
+
+
+
+<hr>
+## mowa\' - timbó
+
+** 
+
+
+
+
+<hr>
+## panayi winu\' - caju do mato; árvore
+
+** 
+
+
+
+![](foto/wany1246-panaji_winu-cajudomato_arvore-cashewtree.jpeg)
+
+
+
+
+
+<hr>
+## po\'a\' - mamão
+
+** 
+
+
+
+![](foto/wany1246-poa-mamao-papaya.jpg)
+
+
+
+
+
+<hr>
+## tike - castanha do Pará
+
+** 
+
+
+
+![](foto/wany1246-tike-castanha_dopara-brazilnut.jpg)
+
+
+
+
+
+<hr>
+## trawan - patawa
+
+** 
+
+
+
+![](foto/wany1246-trawan-patawa-patawa.jpg)
+
+
+
+
+
+<hr>
+## tunuwakan - inajá
+
+** 
+
+
+
+![](foto/wany1246-tunuwakan-inaja-maripa.jpeg)
+
+
+
+
+
+<hr>
+## tupaxakam - pupunha
+
+** 
+
+
+
+![](foto/wany1246-tupaxakam-pupunha-peach_palm.jpg)
+
+
+
+
+
+<hr>
+## utimatan - batata
+
+** 
+
+
+
+![](foto/wany1246-utimatan-batata-potato.jpeg)
+
+
+
+
+
+<hr>
+## utu - cabaça; cuia
+
+** 
+
+
+
+
+<hr>
+## uwaw - tucumã
+
+** 
+
+
+
+![](foto/wany1246-uwaw-tucuma-tucuma.jpg)
+
+
+
+
+
+<hr>
+## watam - fruta pama
+
+** 
+
+
+
+
+<hr>
+## winu\' - caju
+
+** 
+
+
+
+![](foto/wany1246-winu-caju-cashew.jpeg)
+
+
+
+
+
+<hr>
+## wom - algodão; roupa
+
+** 
+
+
+
+![](foto/wany1246-wom-algodao-cotton.jpg)
+
+
+Exemplo de uso:
+
+*kite aton wom (Ribeiro 2000: 7).*
+
+abrir o algodāo.

@@ -1,0 +1,16 @@
+    
+name: my-website
+output_dir: _site
+navbar:
+  title: "Dicionário Wanyam"
+  left:
+    - text: "Introdução"
+      href: index.html
+    - text: "Animais"
+      href: Animais.html
+    - text: "Manufaturas"
+      href: Manufaturas.html
+    - text: "Nomes"
+      href: Nomes.html
+    - text: "Plantas"
+      href: Plantas.html

@@ -1,0 +1,208 @@
+---
+title: "Diciónario Wanyam"
+author: "Uki Lucero e Joshua Birchall"
+---
+
+<div id="barrabusca">
+  <input id="searchbar" onkeyup="busca_entrada()" type="text"
+  name="search" placeholder="Buscar...">
+</div>
+
+<style>
+#barrabusca {
+z-index: 999;
+width: 50%;
+position: absolute;
+top: 0px;
+right: 0px; 
+}
+#searchbar{
+padding:03px;
+border-radius: 10px;
+width: 50%;  
+z-index: 999;   
+margin-left: 30px;
+margin-top: 30px;
+}
+hr {
+overflow: visible; padding: 0;
+border: none;
+border-top: medium double #333;
+color: #333;
+text-align: center;
+}
+img {
+border: 1px solid black;
+}
+#header {
+margin-top: 80px;
+}
+@media only screen and (max-width: 1000px){
+
+img {
+width: 280px; height: 200px; 
+}
+#TOC {
+display: none;
+}
+#searchbar{
+padding:03px;
+border-radius: 10px;
+width: 50%;  
+z-index: 999;   
+margin-left: 30px;
+margin-top: 2px;
+float:right;
+}
+#barrabusca {
+float:right;
+justify-content: right;
+}
+#header {
+margin-top: 25px;
+}
+.toc-ignore {
+  padding: 5px;
+}
+}
+</style>
+<script>
+function busca_entrada() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('section level1');
+    let x2 = document.getElementsByClassName('section level2');
+    
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerText.toLowerCase().includes(input)) {
+            x[i].style.display="none"; 
+
+        }
+        else {
+            x[i].style.display="contents";
+            for (a = 0; a < x2.length; a++){
+                if (!x2[a].innerText.toLowerCase().includes(input)){
+                    x2[a].style.display="none"; 
+                }
+                else {
+                    x2[a].style.display="contents";
+
+                }
+            }
+        }
+    }
+}
+  </script>
+
+
+
+
+<hr>
+## ikit - faca
+
+** 
+
+Exemplo de uso:
+
+*xik onon pan ikit (Ribeiro 2000: 10).*
+
+apontar com faca.
+
+
+
+
+<hr>
+## irowi\' - assento; banco
+
+** 
+
+
+
+
+<hr>
+## itopi\' - balaio; feito de palha de tucumã; para colocar comida
+
+** 
+
+
+
+
+<hr>
+## kawak - barco
+
+** 
+
+Exemplo de uso:
+
+*kirik unay kawak (Ribeiro 2000: 8).*
+
+achar a canoa.
+
+
+
+
+<hr>
+## kiwo\' - flecha
+
+** 
+
+Exemplo de uso:
+
+*ixiwa pa kiwo\' (Ribeiro 2000: 10).*
+
+apontar flecha.
+
+
+
+
+<hr>
+## kosepe - remo
+
+** 
+
+
+
+
+<hr>
+## panayi ixe - lenha
+
+** 
+
+
+
+
+<hr>
+## paru - arco
+
+** 
+
+
+
+
+<hr>
+## tohop - pequeno paneiro
+
+** 
+
+
+
+
+<hr>
+## troki - biju de milho
+
+** 
+
+
+
+
+<hr>
+## xiyat - rede
+
+** 
+
+Exemplo de uso:
+
+*yikun atay xiyat (Ribeiro 2000: 13).*
+
+balançar na rede.
