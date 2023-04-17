@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Introdução</title>
+
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Dicionário Wanyam</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introdução</a>
+</li>
+<li>
+  <a href="Animais.html">Animais</a>
+</li>
+<li>
+  <a href="Manufaturas.html">Manufaturas</a>
+</li>
+<li>
+  <a href="Nomes.html">Nomes</a>
+</li>
+<li>
+  <a href="Plantas.html">Plantas</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Introdução</h1>
+
+</div>
+
+
+<p>Este dicionário é o resultado de um projeto de pesquisa financiado
+pelo Arts and Sciences Support for Undergraduate Research Experience
+(ASSURE) na Universidade de Novo Mexico. Utilizamos um banco de dados
+lexicais das línguas Txapakura, onde já foram compiladas entradas de
+vocabulário e frases curtas a partir da documentação de todas as línguas
+da família Txapakura. As informaçōes sobre o Wanyam foram retiradas de
+seis fontes principais: Haseman (1912), Rivet e Crequi-Montfort (1913),
+Nordenskiold (1913), Snethlage (2016[1935]), Hanke (1975), e Ribeiro
+(1998). Utilizando essas informações, coletamos todas as ocorrências de
+itens de vocabulário básico para comparar as diferentes transcrições
+entre si e com itens semelhantes em outras línguas Txapakura. A partir
+dessa comparação propomos a transcrição mais provável da palavra.</p>
+<p>Aqui apresentamos os sons da língua Wanyam e propomos como eles devem
+ser representados ortograficamente no dicionário. Propomos um alfabeto
+que nāo é exatamente igual ao do português ou do espanhol, mas
+especificamente para o Wanyam, adotando convenções utilizadas nos
+alfabetos das demais línguas Txapakura.</p>
+<div id="consoantes" class="section level2">
+<h2>Consoantes</h2>
+<div id="t" class="section level3">
+<h3><strong>/t/</strong></h3>
+<p>Pode ocorrer em qualquer posição em uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>tawi</em></strong></td>
+<td>‘abelha’</td>
+<td><strong><em>karatik</em></strong></td>
+<td>‘cobra bico de jaca’</td>
+<td><strong><em>ikit</em></strong></td>
+<td>‘faca’</td>
+</tr>
+<tr class="even">
+<td><strong><em>tapan</em></strong></td>
+<td>‘macaco suim’</td>
+<td><strong><em>piti</em></strong></td>
+<td>‘mosca’</td>
+<td><strong><em>tapapat</em></strong></td>
+<td>‘aranha’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="k" class="section level3">
+<h3><strong>/k/</strong></h3>
+<p>Pode ocorrer em qualquer posição em uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>kinam</em></strong></td>
+<td>‘onça pintado’</td>
+<td><strong><em>meki</em></strong></td>
+<td>‘caranguejo’</td>
+<td><strong><em>watik</em></strong></td>
+<td>‘macaco gogo de sola’</td>
+</tr>
+<tr class="even">
+<td><strong><em>kaxin</em></strong></td>
+<td>‘abacaxi’</td>
+<td><strong><em>ukin</em></strong></td>
+<td>‘escorpiāo’</td>
+<td><strong><em>mapak</em></strong></td>
+<td>‘milho’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="p" class="section level3">
+<h3><strong>/p/</strong></h3>
+<p>Pode ocorrer em qualquer posição em uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>paxiren</em></strong></td>
+<td>‘beija flor’</td>
+<td><strong><em>apapa</em></strong></td>
+<td>‘sucuri’</td>
+<td><strong><em>ahop</em></strong></td>
+<td>‘jacaré’</td>
+</tr>
+<tr class="even">
+<td><strong><em>papaki’</em></strong></td>
+<td>‘cupim’</td>
+<td><strong><em>akopa</em></strong></td>
+<td>‘macaxeira’</td>
+<td><strong><em>mikop</em></strong></td>
+<td>‘agouti’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="section" class="section level3">
+<h3><strong>/’/</strong></h3>
+<p>Pode ocorrer apenas no meio ou no final de uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>ukuku’</em></strong></td>
+<td>‘cigarra’</td>
+<td><strong><em>eye’</em></strong></td>
+<td>‘calango’</td>
+<td><strong><em>po’a’</em></strong></td>
+<td>‘mamāo’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="x" class="section level3">
+<h3><strong>/x/</strong></h3>
+<p>Pode ocorrer apenas no início ou no meio de uma palavra. Soa como o
+<em>ch</em> em <em>chato</em> ou <em>t</em> antes do <em>i</em> em
+<em>ratinho</em>.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>xiwen</em></strong></td>
+<td>‘veado capoeira’</td>
+<td><strong><em>apaxam</em></strong></td>
+<td>‘pica-pau’</td>
+<td><strong><em>kaxin</em></strong></td>
+<td>‘abacaxi’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="h" class="section level3">
+<h3><strong>/h/</strong></h3>
+<p>Pode ocorrer apenas no início ou no meio de uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>pihun</em></strong></td>
+<td>‘jacu’</td>
+<td><strong><em>ahop</em></strong></td>
+<td>‘jacaré’</td>
+<td><strong><em>kinam ko hihina</em></strong></td>
+<td>‘gato maracaja’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="m" class="section level3">
+<h3><strong>/m/</strong></h3>
+<p>Pode ocorrer em qualquer posição em uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>moho</em></strong></td>
+<td>‘urubu’</td>
+<td><strong><em>imi</em></strong></td>
+<td>‘anta/tapir’</td>
+<td><strong><em>iram</em></strong></td>
+<td>‘açaí’</td>
+</tr>
+<tr class="even">
+<td><strong><em>meki’</em></strong></td>
+<td>‘caranguejo’</td>
+<td><strong><em>namatok</em></strong></td>
+<td>‘rato’</td>
+<td><strong><em>wom</em></strong></td>
+<td>‘algodão’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="n" class="section level3">
+<h3><strong>/n/</strong></h3>
+<p>Pode ocorrer em qualquer posição em uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>nowi’</em></strong></td>
+<td>‘puraqué’</td>
+<td><strong><em>winu’</em></strong></td>
+<td>‘caju’</td>
+<td><strong><em>utin</em></strong></td>
+<td>‘mutum’</td>
+</tr>
+<tr class="even">
+<td><strong><em>namatok’</em></strong></td>
+<td>‘rato’</td>
+<td><strong><em>kanowan</em></strong></td>
+<td>‘cacau’</td>
+<td><strong><em>tapan</em></strong></td>
+<td>‘macaco suim’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="r" class="section level3">
+<h3><strong>/r/</strong></h3>
+<p>Pode ocorrer apenas no meio de uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>paru</em></strong></td>
+<td>‘arco’</td>
+<td><strong><em>ukari</em></strong></td>
+<td>‘tatu’</td>
+<td><strong><em>tenerere’</em></strong></td>
+<td>‘borboleta’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="w" class="section level3">
+<h3><strong>/w/</strong></h3>
+<p>Pode ocorrer em qualquer posição em uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>wiraw</em></strong></td>
+<td>‘bicho pau’</td>
+<td><strong><em>tawi</em></strong></td>
+<td>‘abelha’</td>
+<td><strong><em>inaw</em></strong></td>
+<td>‘morcego’</td>
+</tr>
+<tr class="even">
+<td><strong><em>wom’</em></strong></td>
+<td>‘algodão’</td>
+<td><strong><em>iwiri</em></strong></td>
+<td>‘marimbondo’</td>
+<td><strong><em>uwaw</em></strong></td>
+<td>‘tucumã’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="y" class="section level3">
+<h3><strong>/y/</strong></h3>
+<p>Pode ocorrer apenas no início ou no meio de uma palavra. Soa como o
+<em>i</em> antes do <em>o</em> em <em>iogurte</em>.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>yowin</em></strong></td>
+<td>‘macaco prego’</td>
+<td><strong><em>yimun</em></strong></td>
+<td>‘formiga sacassaia’</td>
+<td><strong><em>piyaman</em></strong></td>
+<td>‘tamanduá’</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="sequências-de-consoantes" class="section level2">
+<h2>Sequências de Consoantes</h2>
+<div id="tr" class="section level3">
+<h3><strong>/tr/</strong></h3>
+<p>Pode ocorrer apenas no início ou no meio de uma palavra.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>trawam</em></strong></td>
+<td>‘surubim’</td>
+<td><strong><em>atrim</em></strong></td>
+<td>‘casa’</td>
+<td><strong><em>kitrama’</em></strong></td>
+<td>‘homem’</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="vogais" class="section level2">
+<h2>Vogais</h2>
+<p>As cinco vogais podem ocorrer em qualquer posição na palavra.</p>
+<div id="a" class="section level3">
+<h3><strong>/a/</strong></h3>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>awi</em></strong></td>
+<td>‘formiga sauva’</td>
+<td><strong><em>ukari</em></strong></td>
+<td>‘tatu’</td>
+<td><strong><em>kahota</em></strong></td>
+<td>‘quati’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="i" class="section level3">
+<h3><strong>/i/</strong></h3>
+<table>
+<tbody>
+<tr class="odd">
+<td><strong><em>ime</em></strong></td>
+<td>‘nambú’</td>
+<td><strong><em>awine</em></strong></td>
+<td>‘banana’</td>
+<td><strong><em>koki</em></strong></td>
+<td>‘piranha’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="e" class="section level3">
+<h3><strong>/e/</strong></h3>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>erim</em></strong></td>
+<td>‘jacamim’</td>
+<td><strong><em>meki</em></strong></td>
+<td>‘caranguejo’</td>
+<td><strong><em>tike</em></strong></td>
+<td>‘castanha do pará’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="o" class="section level3">
+<h3><strong>/o/</strong></h3>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>otiw</em></strong></td>
+<td>‘macaco de cheiro’</td>
+<td><strong><em>ahorop</em></strong></td>
+<td>‘genipapo do mato’</td>
+<td><strong><em>moho</em></strong></td>
+<td>‘urubu’</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="u" class="section level3">
+<h3><strong>/u/</strong></h3>
+<table>
+<tbody>
+<tr class="odd">
+<td><strong><em>ukin</em></strong></td>
+<td>‘escorpião’</td>
+<td><strong><em>pihun</em></strong></td>
+<td>‘jacu’</td>
+<td><strong><em>utu</em></strong></td>
+<td>‘cabaça’</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

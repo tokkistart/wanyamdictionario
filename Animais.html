@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Uki Lucero e Joshua Birchall" />
+
+
+<title>Diciónario Wanyam</title>
+
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Dicionário Wanyam</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introdução</a>
+</li>
+<li>
+  <a href="Animais.html">Animais</a>
+</li>
+<li>
+  <a href="Manufaturas.html">Manufaturas</a>
+</li>
+<li>
+  <a href="Nomes.html">Nomes</a>
+</li>
+<li>
+  <a href="Plantas.html">Plantas</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Diciónario Wanyam</h1>
+<h4 class="author">Uki Lucero e Joshua Birchall</h4>
+
+</div>
+
+
+<div id="barrabusca">
+<p><input id="searchbar" onkeyup="busca_entrada()" type="text"
+  name="search" placeholder="Buscar..."></p>
+</div>
+<style>
+#barrabusca {
+z-index: 999;
+width: 50%;
+position: absolute;
+top: 0px;
+right: 0px; 
+}
+#searchbar{
+padding:03px;
+border-radius: 10px;
+width: 50%;  
+z-index: 999;   
+margin-left: 30px;
+margin-top: 30px;
+}
+hr {
+overflow: visible; padding: 0;
+border: none;
+border-top: medium double #333;
+color: #333;
+text-align: center;
+}
+img {
+border: 1px solid black;
+}
+#header {
+margin-top: 80px;
+}
+@media only screen and (max-width: 1000px){
+
+img {
+width: 280px; height: 200px; 
+}
+#TOC {
+display: none;
+}
+#searchbar{
+padding:03px;
+border-radius: 10px;
+width: 50%;  
+z-index: 999;   
+margin-left: 30px;
+margin-top: 2px;
+float:right;
+}
+#barrabusca {
+float:right;
+justify-content: right;
+}
+#header {
+margin-top: 25px;
+}
+.toc-ignore {
+  padding: 5px;
+}
+}
+</style>
+<script>
+function busca_entrada() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('section level1');
+    let x2 = document.getElementsByClassName('section level2');
+    
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerText.toLowerCase().includes(input)) {
+            x[i].style.display="none"; 
+
+        }
+        else {
+            x[i].style.display="contents";
+            for (a = 0; a < x2.length; a++){
+                if (!x2[a].innerText.toLowerCase().includes(input)){
+                    x2[a].style.display="none"; 
+                }
+                else {
+                    x2[a].style.display="contents";
+
+                }
+            }
+        }
+    }
+}
+  </script>
+<hr>
+<div id="ahop---jacaré" class="section level2">
+<h2>ahop - jacaré</h2>
+<p>**</p>
+<p><img src="foto/wany1246-ahop-jacare-caiman.jpeg" /></p>
+<p>Exemplo de uso:</p>
+<p><em>im kaw ara ahop (Ribeiro 2000: 53).</em></p>
+<p>você/tu come um jacaré.</p>
+<hr>
+</div>
+<div id="apapa---sucuri" class="section level2">
+<h2>apapa - sucuri</h2>
+<p>**</p>
+<p><img src="foto/wany1246-apapa-sucuri-anaconda.jpg" /></p>
+<hr>
+</div>
+<div id="apaxam---pica-pau" class="section level2">
+<h2>apaxam - pica-pau</h2>
+<p>**</p>
+<p><img src="foto/wany1246-apaxam-pica_pau-woodpecker.jpg" /></p>
+<hr>
+</div>
+<div id="arayi---arara-vermelha-maior" class="section level2">
+<h2>arayi' - arara vermelha maior</h2>
+<p>**</p>
+<p><img
+src="foto/wany1246-araji-arara_vermelha-scarlet_macaw.jpg" /></p>
+<hr>
+</div>
+<div id="awan---capivara" class="section level2">
+<h2>awan - capivara</h2>
+<p>**</p>
+<p><img src="foto/wany1246-awan-capivara-capybara.jpeg" /></p>
+<hr>
+</div>
+<div id="awi---formiga-sauva" class="section level2">
+<h2>awi - formiga sauva</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="awiram---guariba" class="section level2">
+<h2>awiram - guariba</h2>
+<p>**</p>
+<p><img src="foto/wany1246-awiram-guariba-howlermonkey.jpeg" /></p>
+<hr>
+</div>
+<div id="erim---jacamim" class="section level2">
+<h2>erim - jacamim</h2>
+<p>**</p>
+<p><img src="foto/wany1246-erim-jacamim-greywinged_trumpeter.jpg" /></p>
+<hr>
+</div>
+<div id="eye---calango" class="section level2">
+<h2>eye' - calango</h2>
+<p>**</p>
+<p><img src="foto/wany1246-eje-calango-lizard.jpg" /></p>
+<hr>
+</div>
+<div id="imari---veado" class="section level2">
+<h2>imari - veado</h2>
+<p>**</p>
+<p><img src="foto/wany1246-imari-veado-brocket_deer.jpeg" /></p>
+<hr>
+</div>
+<div id="ime---nambú" class="section level2">
+<h2>ime - nambú</h2>
+<p>**</p>
+<p><img src="foto/wany1246-ime-nambu-tinamou.jpeg" /></p>
+<hr>
+</div>
+<div id="ime-unaran---nambu-galinha" class="section level2">
+<h2>ime unaran - nambu galinha</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="imi---antatapir" class="section level2">
+<h2>imi - anta/tapir</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="inaw---morcego" class="section level2">
+<h2>inaw - morcego</h2>
+<p>**</p>
+<p><img src="foto/wany1246-inaw-morcego-bat.jpg" /></p>
+<hr>
+</div>
+<div id="ipan---falcão" class="section level2">
+<h2>ipan - falcão</h2>
+<p>**</p>
+<p><img src="foto/wany1246-ipan-falcao-hawk.jpg" /></p>
+<hr>
+</div>
+<div id="ipik---tamanduá-mambira" class="section level2">
+<h2>ipik - tamanduá mambira</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="ipikipan---tatu-canastra" class="section level2">
+<h2>ipikipan - tatu canastra</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="irawu---formiga" class="section level2">
+<h2>irawu - formiga</h2>
+<p>**</p>
+<p><img src="foto/wany1246-irawu-formiga-ant.jpeg" /></p>
+<hr>
+</div>
+<div id="iwi---tucano" class="section level2">
+<h2>iwi - tucano</h2>
+<p>**</p>
+<p><img src="foto/wany1246-iwi-tucano-toucan.jpg" /></p>
+<hr>
+</div>
+<div id="iwiri---marimbondo-esp." class="section level2">
+<h2>iwiri - marimbondo (esp.)</h2>
+<p>**</p>
+<p><img src="foto/wany1246-iwiri-marimbondo-wasp.jpg" /></p>
+<hr>
+</div>
+<div id="ixikin---traíra" class="section level2">
+<h2>ixikin - traíra</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="ixumin---bicho-preguiça" class="section level2">
+<h2>ixumin - bicho preguiça</h2>
+<p>**</p>
+<p><img src="foto/wany1246-ixumin-preguica-sloth.jpeg" /></p>
+<hr>
+</div>
+<div id="kahota---quati-cão-moleiro" class="section level2">
+<h2>kahota - quati; cão moleiro</h2>
+<p>**</p>
+<p><img src="foto/wany1246-kahota-quati-coati.jpeg" /></p>
+<hr>
+</div>
+<div id="karakaw---cobra" class="section level2">
+<h2>karakaw - cobra</h2>
+<p>**</p>
+<p><img src="foto/wany1246-karakaw-cobra-snake.jpeg" /></p>
+<p>Exemplo de uso:</p>
+<p><em>mom irakan na karakaw (Ribeiro 2000: 11).</em></p>
+<p>as cobras.</p>
+<hr>
+</div>
+<div id="karapakak---peixe-arraia" class="section level2">
+<h2>karapakak - peixe arraia</h2>
+<p>**</p>
+<p><img src="foto/wany1246-karapakak-peixe_arraia-stingray.jpg" /></p>
+<hr>
+</div>
+<div id="karatik---cobra-bico-de-jaca" class="section level2">
+<h2>karatik - cobra bico de jaca</h2>
+<p>**</p>
+<p><img
+src="foto/wany1246-karatik-cobra_bicodejaca-jackbeak_snake.jpg" /></p>
+<hr>
+</div>
+<div id="kinam---onça-pintada" class="section level2">
+<h2>kinam - onça pintada</h2>
+<p>**</p>
+<p><img src="foto/wany1246-kinam-onca_pintada-jaguar.jpeg" /></p>
+<p>Exemplo de uso:</p>
+<p><em>kame xem mene kin kinam (Ribeiro 2000: 43).</em></p>
+<p>onça preta.</p>
+<hr>
+</div>
+<div id="kinam-kohihina---gato-maracaja" class="section level2">
+<h2>kinam kohihina - gato maracaja</h2>
+<p>**</p>
+<p><img
+src="foto/wany1246-kinam_kohihina-gato_maracaja-margay.jpg" /></p>
+<hr>
+</div>
+<div id="kinipitik---mucura" class="section level2">
+<h2>kinipitik - mucura</h2>
+<p>**</p>
+<p><img src="foto/wany1246-kinipitik-mucura-possum.jpeg" /></p>
+<hr>
+</div>
+<div id="koki---piranha" class="section level2">
+<h2>koki - piranha</h2>
+<p>**</p>
+<p><img src="foto/wany1246-koki-piranha-piranha.jpg" /></p>
+<hr>
+</div>
+<div id="meki---caranguejo" class="section level2">
+<h2>meki - caranguejo</h2>
+<p>**</p>
+<p><img src="foto/wany1246-meki-caranguejo-crab.jpg" /></p>
+<hr>
+</div>
+<div id="mikop---agouti-tipo-de-paca-vermelha" class="section level2">
+<h2>mikop - agouti; tipo de paca vermelha</h2>
+<p>**</p>
+<p><img src="foto/wany1246-mikop-paca_vermelha-paca.jpg" /></p>
+<p>Exemplo de uso:</p>
+<p><em>maxak ata mikop (Ribeiro 2000: 31).</em></p>
+<p>eu comerei uma paca.</p>
+<hr>
+</div>
+<div id="miriritike---vagalume" class="section level2">
+<h2>miriritike' - vagalume</h2>
+<p>**</p>
+<p><img src="foto/wany1246-miriritike-vagalume-firefly.jpeg" /></p>
+<hr>
+</div>
+<div id="miyak---queixada" class="section level2">
+<h2>miyak - queixada</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="moho---urubu" class="section level2">
+<h2>moho - urubu</h2>
+<p>**</p>
+<p><img src="foto/wany1246-moho-urubu-vulture.jpeg" /></p>
+<hr>
+</div>
+<div id="mohoyap---pacú-esp." class="section level2">
+<h2>mohoyap - pacú (esp.)</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="murumakan---arara-azul" class="section level2">
+<h2>murumakan - arara azul</h2>
+<p>**</p>
+<p><img src="foto/wany1246-murumakan-arara_azul-blue_macaw.jpg" /></p>
+<hr>
+</div>
+<div id="namatok---rato-camundongo" class="section level2">
+<h2>namatok - rato; camundongo</h2>
+<p>**</p>
+<p><img src="foto/wany1246-namatok-rato-rat.jpeg" /></p>
+<hr>
+</div>
+<div id="niwikin---macaco-da-noite" class="section level2">
+<h2>niwikin - macaco da noite</h2>
+<p>**</p>
+<p><img
+src="foto/wany1246-niwikin-macaco_danoite-night_monkey.jpg" /></p>
+<hr>
+</div>
+<div id="nowi---enguia-elétrica-puraqué" class="section level2">
+<h2>nowi' - enguia elétrica; puraqué</h2>
+<p>**</p>
+<p><img src="foto/wany1246-nowi-puraque-electric_eel.jpg" /></p>
+<hr>
+</div>
+<div id="otiw---macaco-de-cheiro" class="section level2">
+<h2>otiw - macaco de cheiro</h2>
+<p>**</p>
+<p><img src="foto/wany1246-otiw-macaco_decheiro-saimiri.png" /></p>
+<hr>
+</div>
+<div id="papaki---cupim" class="section level2">
+<h2>papaki' - cupim</h2>
+<p>**</p>
+<p><img src="foto/wany1246-papaki-cupim-termite.jpg" /></p>
+<hr>
+</div>
+<div id="paxiren---beija-flor" class="section level2">
+<h2>paxiren - beija flor</h2>
+<p>**</p>
+<p><img src="foto/wany1246-paxiren-beija_flor-hummingbird.jpg" /></p>
+<hr>
+</div>
+<div id="pihun---jacu" class="section level2">
+<h2>pihun - jacu</h2>
+<p>**</p>
+<p><img src="foto/wany1246-pihun-jacu-penelope.jpg" /></p>
+<p>Exemplo de uso:</p>
+<p><em>hiri unon pihun (Ribeiro 2000: 12).</em></p>
+<p>atirar no jacu.</p>
+<hr>
+</div>
+<div id="pikot---tatu-grande-que-faz-vereda" class="section level2">
+<h2>pikot - tatu grande; que faz vereda</h2>
+<p>**</p>
+<p><img src="foto/wany1246-pikot-tatu_grande-giantarmadillo.jpeg" /></p>
+<hr>
+</div>
+<div id="piti---mosca" class="section level2">
+<h2>piti - mosca</h2>
+<p>**</p>
+<p><img src="foto/wany1246-piti-mosca-fly.jpg" /></p>
+<hr>
+</div>
+<div id="piwan---aranha-caranguejeira" class="section level2">
+<h2>piwan - aranha caranguejeira</h2>
+<p>**</p>
+<p><img src="foto/wany1246-piwan-caranguejeira-tarantula.jpeg" /></p>
+<hr>
+</div>
+<div id="piyaman---tamanduá" class="section level2">
+<h2>piyaman - tamanduá</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="tamuruwa---carrapato" class="section level2">
+<h2>tamuruwa' - carrapato</h2>
+<p>**</p>
+<p><img src="foto/wany1246-tamuwura-carrapato-tick.jpg" /></p>
+<hr>
+</div>
+<div id="tapan---macaco-suim" class="section level2">
+<h2>tapan - macaco suim</h2>
+<p>**</p>
+<p><img src="foto/wany1246-tapan-macaco_suim-tamarin.jpg" /></p>
+<hr>
+</div>
+<div id="tapapat---aranha-geral" class="section level2">
+<h2>tapapat - aranha (geral)</h2>
+<p>**</p>
+<p><img src="foto/wany1246-tapapat-aranha-spider.jpeg" /></p>
+<hr>
+</div>
+<div id="tapitak---formiga-tucandeira" class="section level2">
+<h2>tapitak - formiga tucandeira</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="tapiw---cutia" class="section level2">
+<h2>tapiw - cutia</h2>
+<p>**</p>
+<p><img src="foto/wany1246-tapiw-cutia-agouti.jpg" /></p>
+<hr>
+</div>
+<div id="tawi---abelha-geral" class="section level2">
+<h2>tawi - abelha (geral)</h2>
+<p>**</p>
+<p><img src="foto/wany1246-tawi-abelha-bee.png" /></p>
+<p>Exemplo de uso:</p>
+<p><em>tawi nakon mara wiyam (Ribeiro 2000: 7).</em></p>
+<p>abelha(esp.).</p>
+<hr>
+</div>
+<div id="tenerere---borboleta" class="section level2">
+<h2>tenerere' - borboleta</h2>
+<p>**</p>
+<p><img src="foto/wany1246-tenerere-borboleta-butterfly.jpg" /></p>
+<hr>
+</div>
+<div id="towa---tartaruga-tracajá" class="section level2">
+<h2>towa - tartaruga; tracajá</h2>
+<p>**</p>
+<p><img src="foto/wany1246-towa-tartaruga-turtle.jpg" /></p>
+<hr>
+</div>
+<div id="towaraw---papagaio" class="section level2">
+<h2>towaraw - papagaio</h2>
+<p>**</p>
+<p><img src="foto/wany1246-towaraw-papagaio-parrot.jpeg" /></p>
+<hr>
+</div>
+<div id="tramin---arara-vermelha" class="section level2">
+<h2>tramin - arara vermelha</h2>
+<p>**</p>
+<hr>
+</div>
+<div id="trawam---surubim" class="section level2">
+<h2>trawam - surubim</h2>
+<p>**</p>
+<p><img src="foto/wany1246-trawam-surubim-catfish.jpeg" /></p>
+<hr>
+</div>
+<div id="tukawan---caititu" class="section level2">
+<h2>tukawan - caititu</h2>
+<p>**</p>
+<p><img src="foto/wany1246-tukawan-caititu-peccary.jpg" /></p>
+<p>Exemplo de uso:</p>
+<p><em>hwoyt wanan uway ikeren tukawan (Ribeiro 2000: 23).</em></p>
+<p>comida de carne e mandioca.</p>
+<hr>
+</div>
+<div id="tunururu---barata" class="section level2">
+<h2>tunururu' - barata</h2>
+<p>**</p>
+<p><img src="foto/wany1246-tunururu-barata-cockroach.png" /></p>
+<hr>
+</div>
+<div id="ukari---tatu" class="section level2">
+<h2>ukari - tatu</h2>
+<p>**</p>
+<p><img src="foto/wany1246-ukari-tatu-armadillo.jpeg" /></p>
+<hr>
+</div>
+<div id="ukin---escorpião" class="section level2">
+<h2>ukin - escorpião</h2>
+<p>**</p>
+<p><img src="foto/wany1246-ukin-escorpiao-scorpion.jpg" /></p>
+<hr>
+</div>
+<div id="ukuku---cigarra" class="section level2">
+<h2>ukuku' - cigarra</h2>
+<p>**</p>
+<p><img src="foto/wany1246-ukuku-cigarra-cicada.jpg" /></p>
+<hr>
+</div>
+<div id="utin---mutum" class="section level2">
+<h2>utin - mutum</h2>
+<p>**</p>
+<p><img src="foto/wany1246-utin-mutum-curassow.jpeg" /></p>
+<hr>
+</div>
+<div id="waram---macaco-preto" class="section level2">
+<h2>waram - macaco preto</h2>
+<p>**</p>
+<p><img src="foto/wany1246-waram-macaco_preto-spidermonkey.jpg" /></p>
+<hr>
+</div>
+<div id="watik---macaco-gogo-de-sola" class="section level2">
+<h2>watik - macaco gogo de sola</h2>
+<p>**</p>
+<p><img src="foto/wany1246-watik-macaco_gogodesola-olingo.jpg" /></p>
+<hr>
+</div>
+<div id="wawan---peixe-mandi-branco" class="section level2">
+<h2>wawan - peixe mandi (branco)</h2>
+<p>**</p>
+<p><img src="foto/wany1246-wawan-peixe_mandi-catfish.jpg" /></p>
+<hr>
+</div>
+<div id="wiraw---louva-a-deus-bicho-pau" class="section level2">
+<h2>wiraw - louva a deus; bicho pau</h2>
+<p>**</p>
+<p><img src="foto/wany1246-wiraw-bicho_pau-praying_mantis.jpg" /></p>
+<hr>
+</div>
+<div id="xerapa---martim-pescador" class="section level2">
+<h2>xerapa' - martim pescador</h2>
+<p>**</p>
+<p><img src="foto/wany1246-serapa-martim_pescador-kingfisher.jpg" /></p>
+<hr>
+</div>
+<div id="xiwen---veado-capoeira" class="section level2">
+<h2>xiwen - veado capoeira</h2>
+<p>**</p>
+<p>Exemplo de uso:</p>
+<p><em>kirik unun xiwen (Ribeiro 2000: 12).</em></p>
+<p>assar (veado).</p>
+<hr>
+</div>
+<div id="yimun---formiga-sacassaia" class="section level2">
+<h2>yimun - formiga sacassaia</h2>
+<p>**</p>
+<p><img src="foto/wany1246-jimun-formiga_sacassaia-armyant.jpeg" /></p>
+<hr>
+</div>
+<div id="yowin---macaco-prego" class="section level2">
+<h2>yowin - macaco prego</h2>
+<p>**</p>
+<p><img src="foto/wany1246-jowin-macaco_prego-capuchin.jpg" /></p>
+<p>Exemplo de uso:</p>
+<p><em>kerik iyana yowin (Ribeiro 2000: 16).</em></p>
+<p>macaco bonito.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
